@@ -1,0 +1,15 @@
+// Last updated: 3/24/2026, 11:28:27 AM
+class Solution {
+    public int[] countBits(int n) {
+        int arr[]=new int[n+1];
+        for(int i=1;i<=n;i++){
+            int j=i,c=0;
+            while(j>0){
+                if(j/2!=(float)j/2) c++;
+                j/=2;
+            }
+            arr[i]=c;
+        }
+        return arr;
+    }
+}
