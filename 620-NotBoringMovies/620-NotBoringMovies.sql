@@ -1,0 +1,5 @@
+-- Last updated: 3/24/2026, 11:27:00 AM
+# Write your MySQL query statement below
+select id,movie,description,rating from cinema
+where id%2<>0 and description <> "boring"
+order by rating desc , id desc;
