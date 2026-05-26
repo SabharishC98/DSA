@@ -1,4 +1,4 @@
-// Last updated: 5/26/2026, 11:16:40 PM
+// Last updated: 5/26/2026, 11:18:03 PM
 1class Solution {
 2    public int minSwaps(String s) {
 3        // int open = 0, ans = 0;
@@ -20,7 +20,7 @@
 19
 20        int ans=0,c=0,o=0;
 21        int n=s.length()-1,i=0;
-22        while(i<s.length()){
+22        while(i<n+1){
 23            if(s.charAt(i)==']'){
 24                c++;
 25            }
