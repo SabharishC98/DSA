@@ -1,4 +1,4 @@
-// Last updated: 5/29/2026, 12:58:32 AM
+// Last updated: 5/29/2026, 1:00:08 AM
 1class Solution {
 2    public int[] gardenNoAdj(int n, int[][] paths) {
 3        Map<Integer, List<Integer>> map = new HashMap<>();
@@ -20,23 +20,21 @@
 19                int node = q.poll();
 20                for (int neighbor : map.get(node)) {
 21                    if (color[neighbor-1] == 0) {
-22                        // Collect colors used by all neighbors of 'neighbor'
-23                        Set<Integer> used = new HashSet<>();
-24                        for (int nb : map.get(neighbor)) {
-25                            used.add(color[nb-1]);
-26                        }
-27                        // Assign first available color
-28                        for (int j = 1; j <= 4; j++) {
-29                            if (!used.contains(j)) {
-30                                color[neighbor-1] = j;
-31                                break;
-32                            }
-33                        }
-34                        q.add(neighbor);
-35                    }
-36                }
-37            }
-38        }
-39        return color;
-40    }
-41}
+22                        Set<Integer> used = new HashSet<>();
+23                        for (int nb : map.get(neighbor)) {
+24                            used.add(color[nb-1]);
+25                        }
+26                        for (int j = 1; j <= 4; j++) {
+27                            if (!used.contains(j)) {
+28                                color[neighbor-1] = j;
+29                                break;
+30                            }
+31                        }
+32                        q.add(neighbor);
+33                    }
+34                }
+35            }
+36        }
+37        return color;
+38    }
+39}
