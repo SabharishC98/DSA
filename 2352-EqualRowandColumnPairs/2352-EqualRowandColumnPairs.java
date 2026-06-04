@@ -1,4 +1,4 @@
-// Last updated: 6/4/2026, 11:54:56 AM
+// Last updated: 6/4/2026, 11:55:49 AM
 1class Solution {
 2    public int equalPairs(int[][] grid) {
 3        List<String> colset=new ArrayList<>();
@@ -19,11 +19,9 @@
 18            colset.add(col);
 19        }
 20        int c=0;
-21        for(int i=0;i<n;i++){
-22            for(int j=0;j<n;j++){
-23                if(rowset.get(i).equals(colset.get(j))) c++;
-24            }
-25        }
-26        return c;
-27    }
-28}
+21        for(String i:colset){ if(rowset.contains((i))) c+=Collections.frequency(rowset,i);
+22        // System.out.println(i);
+23        }
+24        return c;
+25    }
+26}
