@@ -1,4 +1,4 @@
-// Last updated: 6/11/2026, 5:14:30 AM
+// Last updated: 6/11/2026, 5:35:20 AM
 1class Solution {
 2    public int numSquares(int n) {
 3        List<Integer> squares=new ArrayList<>();
@@ -15,9 +15,9 @@
 14
 15        for(int i=1;i<=m;i++) {
 16            int sq=squares.get(i-1);
-17            for(int j=1;j<= n;j++) {
+17            for(int j=1;j<=n;j++) {
 18                dp[i][j]=dp[i-1][j];
-19                if(j>=sq && dp[i][j-sq]!=Integer.MAX_VALUE/2) {
+19                if(j>=sq) {
 20                    dp[i][j]=Math.min(dp[i][j],dp[i][j-sq]+1);
 21                }
 22            }
