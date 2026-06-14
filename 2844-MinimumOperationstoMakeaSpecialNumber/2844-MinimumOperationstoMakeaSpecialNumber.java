@@ -1,15 +1,15 @@
-// Last updated: 6/15/2026, 12:18:54 AM
+// Last updated: 6/15/2026, 12:20:28 AM
 1class Solution {
 2    public int minimumOperations(String num) {
 3        char[][] last=new char[][]{{'0','0'},{'2','5'},{'5','0'},{'7','5'}};
-4        long zeros = num.chars().filter(c -> c == '0').count();
-5        int min = zeros > 0 ? num.length() - 1 : num.length();
-6        for(char[] i:last){
-7            boolean f1=false,f2=false;
-8            int deletion=0;
-9            char ch1=i[0],ch2=i[1];
-10            for(int j=num.length()-1;j>=0;j--){
-11                char ch=num.charAt(j);
+4        int min=num.length();
+5        for(char[] i:last){
+6            boolean f1=false,f2=false;
+7            int deletion=0;
+8            char ch1=i[0],ch2=i[1];
+9            for(int j=num.length()-1;j>=0;j--){
+10                char ch=num.charAt(j);
+11                if(ch=='0') min=Math.min(min,num.length()-1);
 12                if(!f1 && ch2==ch){
 13                    f1=true;
 14                }
