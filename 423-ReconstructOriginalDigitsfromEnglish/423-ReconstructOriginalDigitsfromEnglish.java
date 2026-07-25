@@ -1,6 +1,6 @@
-// Last updated: 7/25/2026, 3:01:08 PM
+// Last updated: 7/25/2026, 3:03:14 PM
 1class Solution {
-2    List<Integer> l;
+2    List<StringBuilder> l;
 3    public String originalDigits(String s) {
 4        Map<Character,Integer> map=new HashMap<>();
 5        for(char ch:s.toCharArray()){
@@ -84,16 +84,17 @@
 83        }
 84        Collections.sort(l);
 85        StringBuilder sb=new StringBuilder("");
-86        for(int i:l){
+86        for(StringBuilder i:l){
 87            sb.append(i);
 88        }
-89        // System.out.println(l);
-90        return sb.toString();
-91    }
-92    public void addelement(int num,int count){
+89        return sb.toString();
+90    }
+91    public void addelement(int num,int count){
+92        StringBuilder sb=new StringBuilder("");
 93        while(count>0){
-94            l.add(num);
+94            sb.append(num);
 95            count--;
 96        }
-97    }
-98}
+97        l.add(sb);
+98    }
+99}
