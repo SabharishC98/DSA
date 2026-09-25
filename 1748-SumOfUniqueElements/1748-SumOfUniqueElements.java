@@ -1,0 +1,14 @@
+// Last updated: 9/25/2026, 2:35:26 PM
+class Solution {
+    public int sumOfUnique(int[] nums) {
+        int arr[]=new int[101];
+        int sum=0;
+        for(int i=0;i<nums.length;i++){
+            arr[nums[i]]++;
+        }
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==1) sum+=i;
+        }
+        return sum;
+    }
+}
