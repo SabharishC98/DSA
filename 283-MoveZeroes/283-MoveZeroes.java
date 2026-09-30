@@ -1,4 +1,4 @@
-// Last updated: 9/30/2026, 9:52:19 AM
+// Last updated: 9/30/2026, 10:07:39 AM
 1class Solution {
 2    public void moveZeroes(int[] nums) {
 3        int i=0,j=0;
@@ -14,7 +14,8 @@
 13                // System.out.println(i+" "+j);
 14            }
 15            j++;
-16            i=j;
-17        }
-18    }
-19}
+16            if(i<j)
+17            i=j;
+18        }
+19    }
+20}
