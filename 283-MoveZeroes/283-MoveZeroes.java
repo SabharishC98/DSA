@@ -1,16 +1,20 @@
-// Last updated: 3/24/2026, 11:28:49 AM
-class Solution {
-    public void moveZeroes(int[] nums) {
-        int i=0,j=0;
-        while(i<nums.length){
-            if(nums[i]!=0){
-                int t=nums[i];
-                nums[i]=nums[j];
-                nums[j]=t;
-                j++;
-        }
-        i++;
-
-    }
-}
-}
+// Last updated: 9/30/2026, 9:52:19 AM
+1class Solution {
+2    public void moveZeroes(int[] nums) {
+3        int i=0,j=0;
+4        while(j<nums.length){
+5            if(nums[j]==0){
+6                while(i<nums.length-1 && nums[i]==0){
+7                    i++;
+8                }
+9                int t=nums[i];
+10                nums[i]=nums[j];
+11                nums[j]=t;
+12                
+13                // System.out.println(i+" "+j);
+14            }
+15            j++;
+16            i=j;
+17        }
+18    }
+19}
